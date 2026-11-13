@@ -1,0 +1,96 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hisaab Kitaab</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Hisaab Kitaab</h1>
+      <p class="tag" data-i18n="tag"></p>
+    </div>
+    <div class="hright">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" class="chip on" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" class="chip" data-lang="ur" aria-pressed="false">Roman Urdu</button>
+      </div>
+      <div class="stamp" data-i18n="stamp"></div>
+    </div>
+  </header>
+
+  <div class="banner" id="banner" hidden>
+    <span data-i18n="banner"></span>
+    <button class="btn ghost" id="clear" type="button" data-i18n="clear"></button>
+  </div>
+
+  <div class="grid">
+    <div class="col">
+      <section class="slip" aria-labelledby="h-friends">
+        <h2 id="h-friends" data-i18n="hFriends"></h2>
+        <form class="add" id="friendForm" autocomplete="off">
+          <input class="in" id="friendName" data-ph="friendPh" data-aria="friendPh" maxlength="24">
+          <button class="btn" type="submit" data-i18n="add"></button>
+        </form>
+        <div class="chips" id="friends"></div>
+      </section>
+
+      <section class="slip" aria-labelledby="h-items">
+        <h2 id="h-items" data-i18n="hItems"></h2>
+        <form class="add" id="itemForm" autocomplete="off">
+          <input class="in" id="itemName" data-ph="itemPh" data-aria="itemNameAria" maxlength="40">
+          <input class="in price" id="itemPrice" type="number" inputmode="decimal" min="0" step="any" placeholder="Rs" data-aria="priceAria">
+          <button class="btn" type="submit" data-i18n="add"></button>
+        </form>
+        <p class="hint" style="margin-top:10px" data-i18n="itemHint"></p>
+        <ul class="items" id="items"></ul>
+        <div class="charges">
+          <label for="tax"><span data-i18n="tax"></span>
+            <input class="in num" id="tax" type="number" inputmode="decimal" min="0" step="any">
+          </label>
+          <label for="extra"><span data-i18n="extra"></span>
+            <input class="in num" id="extra" type="number" inputmode="decimal" min="0" step="any">
+          </label>
+        </div>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="slip" aria-labelledby="h-result">
+        <h2 id="h-result" data-i18n="hResult"></h2>
+        <div class="total" id="total"></div>
+        <div class="payer">
+          <label for="payer" data-i18n="payerLbl"></label>
+          <select class="in" id="payer"></select>
+        </div>
+        <div class="shares" id="shares"></div>
+        <div class="copywrap">
+          <button class="btn ghost" id="copy" type="button" data-i18n="copy"></button>
+          <div id="copyStatus" class="hint" role="status" aria-live="polite" style="margin:0"></div>
+          <textarea class="in" id="copyBox" readonly hidden data-aria="copyBoxAria"></textarea>
+        </div>
+      </section>
+
+      <section class="slip" aria-labelledby="h-wheel">
+        <h2 id="h-wheel" data-i18n="hWheel"></h2>
+        <p class="hint" id="wheelMsg" hidden data-i18n="wheelMsg"></p>
+        <div class="wheelbox" id="wheelBox">
+          <div class="pointer" aria-hidden="true"></div>
+          <canvas id="wheel" role="img" data-aria="wheelAria"></canvas>
+        </div>
+        <div class="spinrow">
+          <button class="btn big" id="spin" type="button"></button>
+          <div class="winner" id="winner" role="status" aria-live="polite"></div>
+          <button class="btn ghost" id="makePayer" type="button" hidden data-i18n="makePayer"></button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body></html>
